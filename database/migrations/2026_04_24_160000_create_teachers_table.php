@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
+            $table->string('email');
 
             //Primera llave foranea
             $table->unsignedBigInteger('area_id')->nullable(); // Quitamos el unique si un área tiene varios profes
