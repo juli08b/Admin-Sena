@@ -10,13 +10,18 @@ class ComputersController extends Controller
 {
     public function create()
     {
-        return view('computer.create'); 
+        return view('Computer.create'); 
     }
 
     public function store(Request $request)
     {
         $computer = Computers::create($request->all());
 
-        return redirect()->back();
+        return response()->json($computer);
+    }
+
+    public function show(Computers $computer)
+    {
+        return view('Computer.show', compact('computer'));
     }
 }

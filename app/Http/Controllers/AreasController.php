@@ -10,13 +10,18 @@ class AreasController extends Controller
 {
     public function create()
     {
-        return view('area.create'); 
+        return view('Area.create'); 
     }
 
     public function store(Request $request)
     {
         $area = Areas::create($request->all());
 
-        return redirect()->back();
+        return response()->json($area);
+    }
+
+    public function show(Areas $area)
+    {
+        return view('Area.show', compact('area'));
     }
 }

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Centro de Formación')
+
+@section('content')
     <h1>Centro de Formación</h1>
     <form action="{{route('training_center.store')}}" method="POST" enctype="multipart/form-data">
 
@@ -14,18 +11,17 @@
         <label>
             Nombre:
             <br>
-            <input type="text" name="nombre">
+            <input type="text" name="name">
         </label>
         <br>
 
         <label>
-            Ubicacion:
+            Ubicación:
             <br>
-            <input type="text" name="ubicacion">
+            <input type="text" name="location">
         </label>
         <br>
 
-
-        <button type="submit">Enviar Formulario:</button>
-</body>
-</html>
+        <button type="submit">Llenar el siguiente formulario:</button>
+    </form>
+@endsection

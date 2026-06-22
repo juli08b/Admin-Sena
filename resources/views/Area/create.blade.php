@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Área')
+
+@section('content')
     <h1>Área</h1>
     <form action="{{route('area.store')}}" method="POST" enctype="multipart/form-data">
 
@@ -14,11 +11,10 @@
         <label>
             Nombre:
             <br>
-            <input type="text" name="nombre">
+            <input type="text" name="name">
         </label>
         <br>
 
-        <button type="submit">Enviar Formulario:</button>
+        <button type="submit">Llenar el siguiente formulario:</button>
     </form>
-</body>
-</html>
+@endsection

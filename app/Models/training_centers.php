@@ -9,7 +9,7 @@ class TrainingCenters extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'location'];
     
     // Un ccentro de formación tiene muchos instructores
     public function teachers() {

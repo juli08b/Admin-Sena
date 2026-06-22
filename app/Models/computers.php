@@ -9,7 +9,7 @@ class Computers extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['number', 'brand'];
     
     // Un aprendiz pertenece a un computador
     public function apprentices() {
