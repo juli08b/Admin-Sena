@@ -19,9 +19,16 @@ class CoursesController extends Controller
 
     public function store(Request $request)
     {
-        $course = Courses::create($request->all());
+        $validated = $request->validate([
+            'course_number' => 'required|string|max:255',
+            'day' => 'required|string|max:255',
+            'area_id' => 'nullable|exists:areas,id',
+            'training_center_id' => 'nullable|exists:training_centers,id',
+        ]);
 
-        return response()->json($course);
+        $course = Courses::create($validated);
+
+        return redirect()->route('course.show', $course);
     }
 
     public function show(Courses $course)
